@@ -16,7 +16,7 @@ public class DriverManager {
 
 	public static WebDriver initDriver(String browserName) {
 		if (browserName.equalsIgnoreCase(ApplicationConstants.CHROME_BROWSER)) {
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(BrowserOptions.getChromeOptions());
 			// ChromeOptions
 
 		} else if (browserName.equalsIgnoreCase(ApplicationConstants.FIREFOX_BROWSER)) {
@@ -30,6 +30,10 @@ public class DriverManager {
 		}
 		maximizeBrowser();
 		applyImplicitWait();
+		return driver;
+	}
+	
+	public static WebDriver getDriver() {
 		return driver;
 	}
 
