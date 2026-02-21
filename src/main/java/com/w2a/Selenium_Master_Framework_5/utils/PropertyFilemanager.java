@@ -14,11 +14,21 @@ public class PropertyFilemanager {
 	private static Properties props;
 	private static FileInputStream fis;
 
-	public static  Properties initializePropertyFile() {
+	public static Properties initializePropertyFile(String env) {
 		props = new Properties();
+		fis = null;
 		try {
-			fis = new FileInputStream(
-					ApplicationConstants.CONFIG_PROPERTY_FILE_PATH + ApplicationConstants.QA_PROPERTY_FILE_NAME);
+			if (env.equalsIgnoreCase(ApplicationConstants.QA_ENV)) {
+				fis = new FileInputStream(
+						ApplicationConstants.CONFIG_PROPERTY_FILE_PATH + ApplicationConstants.QA_PROPERTY_FILE_NAME);
+			} else if (env.equalsIgnoreCase(ApplicationConstants.UAT_ENV)) {
+				fis = new FileInputStream(
+						ApplicationConstants.CONFIG_PROPERTY_FILE_PATH + ApplicationConstants.UAT_PROPERTY_FILE_NAME);
+			} else {
+				fis = new FileInputStream(
+						ApplicationConstants.CONFIG_PROPERTY_FILE_PATH + ApplicationConstants.QA_PROPERTY_FILE_NAME);
+			}
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

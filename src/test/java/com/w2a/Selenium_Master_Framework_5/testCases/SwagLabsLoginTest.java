@@ -12,7 +12,7 @@ import com.w2a.Selenium_Master_Framework_5.utils.ApplicationConstants;
 
 public class SwagLabsLoginTest extends TestSetup {
 
-	@Test
+	@Test()
 	public void verifyloginWithValidCredentials() throws InterruptedException {
 		LoginPage loginPage = new LoginPage();
 		ProductsPage productsPage = loginPage.doLoginWithValidCredentials("standard_user", "secret_sauce");
@@ -20,13 +20,14 @@ public class SwagLabsLoginTest extends TestSetup {
 
 		Thread.sleep(Duration.ofSeconds(5));
 
+		
 	}
 
 	@Test
 	public void verifyloginWithInValidCredentials() {
 
-		//TODO : complete the test case for login with invalid credentials
-		
+		// TODO : complete the test case for login with invalid credentials
+
 		// Launch A Browser
 
 		// Navigate to Test Site URL
