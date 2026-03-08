@@ -15,7 +15,7 @@ public class BrowserOptions {
 	 */
 	
 	
-	public static ChromeOptions getChromeOptions() {
+	public synchronized static ChromeOptions getChromeOptions() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
 		options.addArguments("--disable-notifications");

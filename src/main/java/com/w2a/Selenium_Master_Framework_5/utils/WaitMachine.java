@@ -18,7 +18,7 @@ public class WaitMachine {
 	
 	//wait for element to be displayed
 	public static void waitForElementToBeDisplayed(By locator) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 	
 	

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="env" value="uat"/>
+<suite parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="env" value="qa"/>
   <listeners>
     <listener class-name="com.w2a.Selenium_Master_Framework_5.listners.CustomListners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test On Firefox(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest">
         <methods>
@@ -13,9 +14,8 @@
           <include name="verifyloginWithInValidCredentials"/>
           <include name="beforeMethod"/>
           <include name="testSetup"/>
-          <include name="verifyloginWithValidCredentials"/>
         </methods>
       </class> <!-- com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test On Firefox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -12,5 +12,8 @@ public class ApplicationConstants {
 	public static final String FIREFOX_BROWSER="firefox";
 	public static final String SAFARI_BROWSER="safari";
 	public static final String Products_PAGE_TITLE_NOT_PRESENT="Product Title is not displayed, Login might have failed";
+	public static final String TEST_REPORT_PATH="./src/test/resources/TestReport/";
+	public static final String TEST_REPORT_NAME="TestReport.html";
+	public static final String SCREENSHOT_PATH=System.getProperty("user.dir")+"/screenshots/";
 
 }

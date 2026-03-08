@@ -10,32 +10,37 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import com.aventstack.extentreports.ExtentReports;
 import com.w2a.Selenium_Master_Framework_5.utils.DriverManager;
+import com.w2a.Selenium_Master_Framework_5.utils.ExtentReportManager;
 import com.w2a.Selenium_Master_Framework_5.utils.PropertyFilemanager;
 
 public class TestSetup {
 
 	protected static Properties prop;
 	protected static WebDriver driver;
+	public static ExtentReports extent;
 
 	// Before Suite
 	@Parameters("env")
 	@BeforeSuite
-	public void testSetup(String env) {
-		// Initialize PropertyFile
+	public synchronized void testSetup(String env) {
+
 		prop = PropertyFilemanager.initializePropertyFile(env);
-		// Initialize logger
-		// initialize Reporter
+		extent= ExtentReportManager.initializeExtentReport();
+		System.out.println(extent);
 
 	}
 
 	// Before Test
 
 	// before Method
+	@Parameters("browser")
 	@BeforeMethod
-	public void beforeMethod(Method method) {
-		driver = DriverManager.initDriver("chrome");
-		DriverManager.navigateToTestSite(prop.getProperty("testURL"), driver);
+	public  void beforeMethod(Method method,String browser) {
+		DriverManager.initDriver(browser);
+		DriverManager.navigateToTestSite(prop.getProperty("testURL"), DriverManager.getDriver());
+		// ExtentReportManager.createExtentTest(method.getName());
 		//System.out.println("**** Execution of Test Case: " + method.getName() + " Started ****");
 
 	}
@@ -55,7 +60,7 @@ public class TestSetup {
 		{
 			System.out.println("**** Execution of Test Case: " + result.getName() + " Skipped ****");
 		}*/
-		DriverManager.killDriver(driver);
+		DriverManager.killDriver(DriverManager.getDriver());
 
 	}
 	// After Test

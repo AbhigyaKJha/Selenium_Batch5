@@ -25,13 +25,13 @@ public class LoginPage extends TestSetup {
 
 	public ProductsPage doLoginWithValidCredentials(String userName, String password) {
 		// enter the valid username
-		ElementInteraction.type(this.userName, userName);
+		ElementInteraction.type(this.userName, userName,"Username");
 
 		// enter the valid password
-		ElementInteraction.type(this.password, password);
+		ElementInteraction.type(this.password, password,"Password");
 
 		// click on login button -> Products Page
-		ElementInteraction.click(this.loginButton);
+		ElementInteraction.click(this.loginButton,"Login Button");
 
 		return new ProductsPage();
 	}
@@ -48,6 +48,10 @@ public class LoginPage extends TestSetup {
 
 		return this;
 
+	}
+
+	public boolean isErrorMessageDisplayed() {
+		return ElementInteraction.getElement(this.loginErrorMessage).isDisplayed();
 	}
 
 }

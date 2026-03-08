@@ -13,9 +13,12 @@ public class ProductsPage {
 	
 	//producTitle is displayed or not
 	public boolean isProductTitleDisplayed() {
-		return ElementInteraction.isElementDisplayed(productTitle);
+		return ElementInteraction.getElement(this.productTitle).isDisplayed();
 	}
 	
+	public boolean isPageHeaderDisplayed() {
+		return ElementInteraction.isElementDisplayed(this.productTitle);
+	}
 	
 	//Cart logo is displayed or not
 	

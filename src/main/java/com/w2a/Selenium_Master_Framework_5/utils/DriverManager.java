@@ -12,37 +12,41 @@ public class DriverManager {
 	 * This class will be responsible for managing Browser Driver related stuff
 	 */
 
-	private static WebDriver driver;
+	private static ThreadLocal<WebDriver> driver= new ThreadLocal<WebDriver>();
 
-	public static WebDriver initDriver(String browserName) {
+	public synchronized static WebDriver initDriver(String browserName) {
 		if (browserName.equalsIgnoreCase(ApplicationConstants.CHROME_BROWSER)) {
-			driver = new ChromeDriver(BrowserOptions.getChromeOptions());
+			DriverManager.setDriver(new ChromeDriver(BrowserOptions.getChromeOptions()));
 			// ChromeOptions
 
 		} else if (browserName.equalsIgnoreCase(ApplicationConstants.FIREFOX_BROWSER)) {
-			driver = new FirefoxDriver();
+			DriverManager.setDriver(new FirefoxDriver());
 			// FirefoxOptions
 
 		} else if (browserName.equalsIgnoreCase(ApplicationConstants.SAFARI_BROWSER)) {
-			driver = new SafariDriver();
+			DriverManager.setDriver( new SafariDriver());
 			// SafariOptions
 
 		}
 		maximizeBrowser();
 		applyImplicitWait();
-		return driver;
+		return DriverManager.getDriver();
 	}
 	
 	public static WebDriver getDriver() {
-		return driver;
+		return DriverManager.driver.get();
+	}
+	
+	public static void setDriver(WebDriver driver) {
+		DriverManager.driver.set(driver);
 	}
 
 	private static void maximizeBrowser() {
-		driver.manage().window().maximize();
+		DriverManager.getDriver().manage().window().maximize();
 	}
 
 	private static void applyImplicitWait() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ApplicationConstants.DEFAULT_WAIT_TIMEOUT));
+		DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(ApplicationConstants.DEFAULT_WAIT_TIMEOUT));
 	}
 
 	public static void killDriver(WebDriver driver) {

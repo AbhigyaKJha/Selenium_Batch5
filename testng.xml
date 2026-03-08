@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="tests" thread-count="5">
 
+	<parameter name="env" value="qa"></parameter>
 	<listeners>
 		<listener
-			class-name="com.w2a.Selenium_Master_Framework_5.listners.CustomListners"></listener>
+			class-name="com.w2a.Selenium_Master_Framework_5.listners.CustomListners" />
 	</listeners>
-	<parameter name="env" value="qa"></parameter>
-	
-	<test name="Test">
+	<test name="Test On Chrome">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest" />
+		</classes>
+	</test> <!--
+	Test -->
+
+	<test name="Test On Firefox">
+		<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class
 				name="com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest" />
