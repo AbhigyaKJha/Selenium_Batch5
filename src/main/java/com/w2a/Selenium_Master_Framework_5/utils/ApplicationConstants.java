@@ -15,5 +15,6 @@ public class ApplicationConstants {
 	public static final String TEST_REPORT_PATH="./src/test/resources/TestReport/";
 	public static final String TEST_REPORT_NAME="TestReport.html";
 	public static final String SCREENSHOT_PATH=System.getProperty("user.dir")+"/screenshots/";
-
+	public static final String TestData_SHEET_PATH="./src/test/resources/TestDataFiles/";
+	
 }

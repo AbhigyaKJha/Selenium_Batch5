@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-08T08:42:50 IST" name="Suite" finished-at="2026-03-08T08:42:50 IST" duration-ms="0">
+  <suite started-at="2026-03-14T08:43:11 IST" name="Suite" finished-at="2026-03-14T08:43:19 IST" duration-ms="8264">
     <groups>
     </groups>
+    <test started-at="2026-03-14T08:43:11 IST" name="Test On Chrome" finished-at="2026-03-14T08:43:19 IST" duration-ms="8264">
+      <class name="com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest">
+        <test-method is-config="true" signature="testSetup(java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:10 IST" name="testSetup" finished-at="2026-03-14T08:43:11 IST" duration-ms="92" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetup -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:11 IST" name="beforeMethod" finished-at="2026-03-14T08:43:13 IST" duration-ms="2867" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest.verifyloginWithInValidCredentials(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:11 IST" name="beforeMethod" finished-at="2026-03-14T08:43:14 IST" duration-ms="2999" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest.verifyloginWithValidCredentials(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyloginWithInValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:13 IST" name="verifyloginWithInValidCredentials" data-provider="data" finished-at="2026-03-14T08:43:19 IST" duration-ms="5265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ABC]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[XYZ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyloginWithInValidCredentials -->
+        <test-method signature="verifyloginWithValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:14 IST" name="verifyloginWithValidCredentials" data-provider="data" finished-at="2026-03-14T08:43:15 IST" duration-ms="1226" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyloginWithValidCredentials -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:15 IST" name="afterMethod" finished-at="2026-03-14T08:43:15 IST" duration-ms="103" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyloginWithValidCredentials status=SUCCESS method=SwagLabsLoginTest.verifyloginWithValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280]" started-at="2026-03-14T08:43:19 IST" name="afterMethod" finished-at="2026-03-14T08:43:19 IST" duration-ms="110" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyloginWithInValidCredentials status=SUCCESS method=SwagLabsLoginTest.verifyloginWithInValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest@68df9280] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.w2a.Selenium_Master_Framework_5.testCases.SwagLabsLoginTest -->
+    </test> <!-- Test On Chrome -->
   </suite> <!-- Suite -->
 </testng-results>
